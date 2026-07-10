@@ -76,10 +76,16 @@ echo '--password-store=basic' > "$HOME/.config/brave-flags.conf"
 # enable virtual keyboard
 echo 'KWIN_IM_SHOW_ALWAYS=1' | sudo tee -a /etc/environment > /dev/null
 
-# work tools
-sudo pacman -S --noconfirm nodejs npm docker docker-compose thunderbird
+# extra work-specific tools
+sudo pacman -S --noconfirm php nodejs npm docker docker-compose thunderbird
 yay -S --noconfirm mattermost-desktop zoom
 sudo usermod -aG docker "$(whoami)"
+# enable php iconv for phpactor language server in Zed
+if grep -Eq '^[;[:space:]]*extension[[:space:]]*=[[:space:]]*iconv([.]so)?[[:space:]]*$' /etc/php/php.ini; then
+    sudo sed -Ei 's|^[;[:space:]]*extension[[:space:]]*=[[:space:]]*iconv([.]so)?[[:space:]]*$|extension=iconv|' /etc/php/php.ini
+elif ! grep -Eq '^[[:space:]]*extension[[:space:]]*=[[:space:]]*iconv([[:space:]]*)$' /etc/php/php.ini; then
+    echo 'extension=iconv' | sudo tee -a /etc/php/php.ini > /dev/null
+fi
 
 # manual configuration steps
 echo ""
