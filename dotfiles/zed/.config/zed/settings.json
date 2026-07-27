@@ -1,4 +1,9 @@
 {
+  "language_models": {
+    "ollama": {
+      "api_url": "http://192.168.1.15:11434"
+    }
+  },
   "edit_predictions": {
     "allow_data_collection": "no",
   },
