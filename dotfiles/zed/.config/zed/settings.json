@@ -143,4 +143,23 @@
     "light": "One Light",
     "dark": "Catppuccin Mocha",
   },
+  // ls ~/.local/share/zed/extensions/installed
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "catppuccin-icons": true,
+    "dockerfile": true,
+    "git-firefly": true,
+    "html": true,
+    "just": true,
+    "latex": true,
+    "log": true,
+    "lua": true,
+    "make": true,
+    "mermaid": true,
+    "nginx": true,
+    "php": true,
+    "scss": true,
+    "toml": true,
+    "xml": true,
+  },
 }
