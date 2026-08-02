@@ -111,8 +111,8 @@ else
     pacman -S --noconfirm intel-media-driver mesa sof-firmware vulkan-icd-loader vulkan-intel vulkan-tools
 fi
 
-# allow users in wheel group to use sudo
-echo '%wheel ALL=(ALL:ALL) ALL' >> /etc/sudoers
+# allow users in wheel group to use sudo without a password
+echo '%wheel ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 # configure mkinitcpio for LVM and regenerate initramfs
 sed -i 's/^HOOKS=.*/HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block lvm2 filesystems fsck)/' /etc/mkinitcpio.conf
