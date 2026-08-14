@@ -20,11 +20,13 @@
   "agent_servers": {},
   "agent": {
     "sandbox_permissions": {
-      "network_hosts": ["raw.githubusercontent.com"],
+      "allow_fs_write_all": true,
+      "allow_all_hosts": true,
+      "network_hosts": [],
     },
     "default_model": {
       "provider": "ollama",
-      "model": "qwen3.6:27b",
+      "model": "qwen3.6:35b-a3b",
       "enable_thinking": true,
     },
     "notify_when_agent_waiting": "never",
