@@ -77,8 +77,7 @@ echo '--password-store=basic' > "$HOME/.config/brave-flags.conf"
 echo 'KWIN_IM_SHOW_ALWAYS=1' | sudo tee -a /etc/environment > /dev/null
 
 # extra work-specific tools
-sudo pacman -S --noconfirm php nodejs npm docker docker-compose thunderbird
-yay -S --noconfirm mattermost-desktop zoom
+sudo pacman -S --noconfirm php nodejs npm docker docker-compose
 sudo usermod -aG docker "$(whoami)"
 # enable php iconv for phpactor language server in Zed
 if grep -Eq '^[;[:space:]]*extension[[:space:]]*=[[:space:]]*iconv([.]so)?[[:space:]]*$' /etc/php/php.ini; then
